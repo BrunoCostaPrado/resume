@@ -14,6 +14,7 @@
 - [Quick Start](#quick-start)
 - [Commands Reference](#commands-reference)
 - [Project Structure](#project-structure)
+- [Demo Projects](#demo-projects)
 - [Configuration](#configuration)
 - [Deployment](#deployment)
 - [CI/CD Pipeline](#cicd-pipeline)
@@ -32,7 +33,7 @@ Resume Astro is a statically generated bilingual resume website supporting Engli
 - ✅ Print-friendly styles
 - ✅ SEO optimized with Open Graph, Twitter Cards, JSON-LD
 - ✅ Path aliases (`@/*`) for cleaner imports
-- ✅ Biome linting (excludes src/projects/)
+- ✅ Biome linting
 - ✅ Playwright end-to-end testing
 
 ## Tech Stack
@@ -96,13 +97,21 @@ resume-astro/
 │   │   └── resume-pt.json   # Portuguese data
 │   ├── layouts/
 │   │   └── Layout.astro     # Base layout with SEO meta tags
-│   ├── pages/
-│   │   ├── index.astro      # English page (/)
-│   │   └── pt/
-│   │       └── index.astro  # Portuguese page (/pt)
-│   └── projects/            # Legacy project files (excluded from lint)
+│   └── pages/
+│       ├── index.astro      # English page (/)
+│       └── pt/
+│           └── index.astro  # Portuguese page (/pt)
 ├── public/
-│   └── _headers             # Netlify cache headers
+│   ├── _headers             # Netlify cache headers
+│   └── projects/            # Live demo projects
+│       ├── Relogio/         # Portuguese clock
+│       ├── Relogio-en/      # English clock
+│       ├── Cronometro/      # Portuguese stopwatch
+│       ├── Cronometro-en/   # English stopwatch
+│       ├── Lampada/         # Portuguese lamp
+│       ├── Lampada-en/      # English lamp
+│       ├── Calculadora_de_imc/      # Portuguese BMI calculator
+│       └── Calculadora_de_imc-en/    # English BMI calculator
 ├── tests/
 │   ├── resume.spec.ts        # English page tests
 │   └── resume-pt.spec.ts    # Portuguese page tests
@@ -116,6 +125,28 @@ resume-astro/
 ├── vercel.json              # Vercel cache headers
 └── package.json
 ```
+
+## Demo Projects
+
+The site includes live demo projects showcasing HTML/CSS/JavaScript skills:
+
+### Portuguese (/)
+
+| Project | Description |
+|---------|-------------|
+| Relogio Digital | Digital clock with HTML and CSS |
+| Cronometro | Stopwatch with lap timer functionality |
+| Lampada | Interactive lamp with on/off toggle |
+| Calculadora de IMC | BMI (Body Mass Index) calculator |
+
+### English (/pt)
+
+| Project | Description |
+|---------|-------------|
+| Clock | Digital clock with HTML and CSS |
+| Stopwatch | Stopwatch with lap timer functionality |
+| Lamp | Interactive lamp with on/off toggle |
+| BMI Calculator | BMI (Body Mass Index) calculator |
 
 ## Configuration
 
@@ -135,10 +166,6 @@ import Layout from "../../layouts/Layout.astro"
 // Use
 import Layout from "@/layouts/Layout.astro"
 ```
-
-### Linting Exclusions
-
-`src/projects/` directory is excluded from linting in `biome.jsonc`.
 
 ## Deployment
 
@@ -167,6 +194,7 @@ import Layout from "@/layouts/Layout.astro"
 |------------|----------------|
 | HTML pages | `no-cache` |
 | JS/CSS (`_astro/*`) | `1 year, immutable` |
+| Projects | `no-cache` |
 | Favicon | `1 day` |
 
 ## CI/CD Pipeline
