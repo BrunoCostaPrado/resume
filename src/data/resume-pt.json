@@ -69,22 +69,28 @@
   ],
   "projects": [
     {
-      "name": "Introdução a Indústria 4.0 e Fusion 360",
-      "description": "Introdução à indústria 4.0 e ao uso do Fusion 360. Escola Saga.",
-      "keywords": ["Modelagem 3D", "Fusion 360"],
-      "url": ""
+      "name": "Relogio Digital",
+      "description": "Relógio digital construído com HTML, CSS e JavaScript.",
+      "keywords": ["HTML", "CSS", "JavaScript"],
+      "url": "/projects/Relogio/relogio.html"
     },
     {
-      "name": "CURSO Start",
-      "description": "Modelagem 3D, edição de vídeos, manipulação de imagens e criação de cenários 3D. Escola Saga.",
-      "keywords": ["Modelagem 3D", "Edição de Vídeos"],
-      "url": ""
+      "name": "Cronometro",
+      "description": "Cronômetro com função de volta.",
+      "keywords": ["HTML", "CSS", "JavaScript"],
+      "url": "/projects/Cronometro/cronometro.html"
     },
     {
-      "name": "CCNA 200-301",
-      "description": "Introdução a sistemas Cisco para certificação CCNA. Udemy.",
-      "keywords": ["Redes", "Cisco"],
-      "url": ""
+      "name": "Lampada",
+      "description": "Lâmpada interativa com estados ligado/desligado.",
+      "keywords": ["HTML", "CSS", "JavaScript"],
+      "url": "/projects/Lampada/lampada.html"
+    },
+    {
+      "name": "Calculadora de IMC",
+      "description": "Calculadora de Índice de Massa Corporal (IMC).",
+      "keywords": ["HTML", "CSS", "JavaScript"],
+      "url": "/projects/Calculadora_de_imc/calculadora.html"
     }
   ]
 }

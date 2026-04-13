@@ -10,15 +10,34 @@ import resume from "@/data/resume-pt.json"
 import Layout from "@/layouts/Layout.astro"
 
 const { basics, work, skills, education, projects } = resume
+
+const projectGallery = [
+  { name: "Relogio", url: "/projects/Relogio/relogio.html" },
+  { name: "Cronometro", url: "/projects/Cronometro/cronometro.html" },
+  { name: "Lampada", url: "/projects/Lampada/lampada.html" },
+  { name: "Calculadora de IMC", url: "/projects/Calculadora_de_imc/calculadora.html" },
+]
 ---
 
 <Layout title={`${basics.name} - ${basics.label}`} description={basics.summary} lang="pt">
   <Header basics={basics} currentUrl="/pt" otherLang="/" langLabel="EN" />
 
   <Section title="About">
-    <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
       {basics.summary}
     </p>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      {projectGallery.map((project) => (
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block p-3 bg-slate-50 dark:bg-slate-800 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-center"
+        >
+          <span class="text-sm font-medium text-slate-700 dark:text-slate-300">{project.name}</span>
+        </a>
+      ))}
+    </div>
   </Section>
 
   <Section title="Experience">
