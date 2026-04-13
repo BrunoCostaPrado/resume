@@ -83,7 +83,7 @@
     {
       "name": "Lampada",
       "description": "Lâmpada interativa com estados ligado/desligado.",
-      "keywords": ["HTML", "CSS", "JavaScript"],
+      "keywords": ["HTML", "CSS"],
       "url": "/projects/Lampada/lampada.html"
     },
     {
