@@ -1,0 +1,14 @@
+# Netlify cache headers
+# https://docs.netlify.com/routing/headers/
+
+/index.html
+  Cache-Control: no-cache
+
+/pt/index.html
+  Cache-Control: no-cache
+
+/_astro/*
+  Cache-Control: max-age=31536000, immutable
+
+/favicon.svg
+  Cache-Control: max-age=86400

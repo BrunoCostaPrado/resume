@@ -1,0 +1,29 @@
+---
+interface SkillGroup {
+  name: string
+  keywords: string[]
+}
+
+interface Props {
+  skills: SkillGroup[]
+}
+
+const { skills } = Astro.props
+---
+
+<div class="space-y-4">
+  {skills.map((group) => (
+    <div>
+      <h3 class="font-medium text-slate-800 dark:text-slate-200 mb-2 text-sm">
+        {group.name}
+      </h3>
+      <div class="flex flex-wrap gap-2">
+        {group.keywords.map((keyword) => (
+          <span class="px-2.5 py-1 text-xs sm:text-sm bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded">
+            {keyword}
+          </span>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>

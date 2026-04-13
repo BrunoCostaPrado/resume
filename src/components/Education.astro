@@ -1,0 +1,39 @@
+---
+interface EducationEntry {
+  institution: string
+  area: string
+  studyType: string
+  startDate: string
+  endDate: string
+}
+
+interface Props {
+  education: EducationEntry[]
+}
+
+const { education } = Astro.props
+
+function formatDate(dateStr: string): string {
+  if (!dateStr) return "Present"
+  const date = new Date(dateStr)
+  return date.toLocaleDateString("en-US", { month: "short", year: "numeric" })
+}
+---
+
+<div class="space-y-4">
+  {education.map((edu) => (
+    <div class="flex flex-wrap justify-between items-start gap-x-2">
+      <div>
+        <h3 class="font-semibold text-slate-900 dark:text-white">
+          {edu.institution}
+        </h3>
+        <p class="text-slate-600 dark:text-slate-400 text-sm">
+          {edu.studyType} in {edu.area}
+        </p>
+      </div>
+      <span class="text-sm text-slate-500 dark:text-slate-400 whitespace-nowrap">
+        {formatDate(edu.startDate)} – {formatDate(edu.endDate)}
+      </span>
+    </div>
+  ))}
+</div>

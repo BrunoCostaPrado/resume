@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string
+  description?: string
+  lang?: string
+}
+
+const { title, description = "My professional resume", lang = "en" } = Astro.props
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": title.split(" - ")[0],
+      "description": description,
+      "url": canonicalURL.href
+    })} />
+  </head>
+  <body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans antialiased">
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  @media print {
+    body {
+      background: white !important;
+      color: black !important;
+    }
+  }
+</style>

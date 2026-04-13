@@ -1,0 +1,84 @@
+---
+interface Props {
+  basics: {
+    name: string
+    label: string
+    email: string
+    phone?: string
+    phoneMobile?: string
+    url?: string
+    location?: {
+      city: string
+      region: string
+      countryCode: string
+    }
+    profiles: {
+      network: string
+      url: string
+      username: string
+    }[]
+  }
+  currentUrl?: string
+  otherLang?: string
+  langLabel?: string
+}
+
+const { basics, currentUrl = "/", otherLang = "/pt", langLabel = "PT" } = Astro.props
+---
+
+<div class="fixed top-4 right-4 z-50 flex gap-2">
+  <a 
+    href={otherLang}
+    class="px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 rounded hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+  >
+    {langLabel}
+  </a>
+</div>
+
+<header class="mb-8 sm:mb-10">
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-2">
+    {basics.name}
+  </h1>
+  <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-4">
+    {basics.label}
+  </p>
+  
+  <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm sm:text-base text-slate-600 dark:text-slate-400">
+    {basics.location && (
+      <span>{basics.location.city}, {basics.location.region}</span>
+    )}
+    <span class="hidden sm:inline">•</span>
+    <a href={`mailto:${basics.email}`} class="hover:text-accent dark:hover:text-accent-light transition-colors">
+      {basics.email}
+    </a>
+    <span class="hidden sm:inline">•</span>
+    <span>{basics.phone}</span>
+    {basics.phoneMobile && (
+      <>
+        <span class="hidden sm:inline">|</span>
+        <span>{basics.phoneMobile}</span>
+      </>
+    )}
+    {basics.url && (
+      <>
+        <span class="hidden sm:inline">•</span>
+        <a href={basics.url} target="_blank" rel="noopener noreferrer" class="hover:text-accent dark:hover:text-accent-light transition-colors">
+          {basics.url.replace(/^https?:\/\//, '')}
+        </a>
+      </>
+    )}
+  </div>
+
+  <div class="flex flex-wrap gap-4 mt-3 text-sm sm:text-base">
+    {basics.profiles.map((profile) => (
+      <a 
+        href={profile.url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors"
+      >
+        {profile.network}
+      </a>
+    ))}
+  </div>
+</header>

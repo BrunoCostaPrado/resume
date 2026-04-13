@@ -1,0 +1,42 @@
+---
+interface ProjectEntry {
+  name: string
+  description: string
+  keywords: string[]
+  url: string
+}
+
+interface Props {
+  projects: ProjectEntry[]
+}
+
+const { projects } = Astro.props
+---
+
+<div class="space-y-4">
+  {projects.map((project) => (
+    <div>
+      <div class="flex flex-wrap items-center gap-2 mb-1">
+        <h3 class="font-semibold text-slate-900 dark:text-white">
+          {project.url ? (
+            <a href={project.url} target="_blank" rel="noopener noreferrer" class="hover:text-accent dark:hover:text-accent-light transition-colors">
+              {project.name}
+            </a>
+          ) : (
+            project.name
+          )}
+        </h3>
+        <div class="flex gap-1.5">
+          {project.keywords.map((keyword) => (
+            <span class="px-2 py-0.5 text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded">
+              {keyword}
+            </span>
+          ))}
+        </div>
+      </div>
+      <p class="text-slate-700 dark:text-slate-300 text-sm">
+        {project.description}
+      </p>
+    </div>
+  ))}
+</div>

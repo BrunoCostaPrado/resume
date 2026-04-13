@@ -1,0 +1,51 @@
+---
+interface WorkEntry {
+  name: string
+  position: string
+  url: string
+  startDate: string
+  endDate: string
+  summary: string
+  highlights: string[]
+}
+
+interface Props {
+  work: WorkEntry[]
+}
+
+const { work } = Astro.props
+
+function formatDate(dateStr: string): string {
+  if (!dateStr) return "Present"
+  const date = new Date(dateStr)
+  return date.toLocaleDateString("en-US", { month: "short", year: "numeric" })
+}
+---
+
+<div class="space-y-6">
+  {work.map((job) => (
+    <div>
+      <div class="flex flex-wrap justify-between items-start mb-1 gap-x-2">
+        <h3 class="font-semibold text-slate-900 dark:text-white">
+          {job.url ? (
+            <a href={job.url} target="_blank" rel="noopener noreferrer" class="hover:text-accent dark:hover:text-accent-light transition-colors">
+              {job.position}
+            </a>
+          ) : (
+            job.position
+          )}
+        </h3>
+        <span class="text-sm text-slate-500 dark:text-slate-400 whitespace-nowrap">
+          {formatDate(job.startDate)} – {formatDate(job.endDate)}
+        </span>
+      </div>
+      <p class="text-slate-600 dark:text-slate-400 mb-2">{job.name}</p>
+      <p class="text-slate-700 dark:text-slate-300 text-sm mb-2">{job.summary}</p>
+      <ul class="list-disc list-outside ml-4 text-sm text-slate-700 dark:text-slate-300 space-y-1">
+        {job.highlights.map((highlight) => (
+          <li class="leading-relaxed">{highlight}</li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>

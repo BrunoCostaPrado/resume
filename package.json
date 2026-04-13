@@ -1,0 +1,23 @@
+{
+	"name": "resume-astro",
+	"type": "module",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"lint": "biome check --write .",
+		"test": "playwright test",
+		"test:ui": "playwright test --ui",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/tailwind": "^6.0.0",
+		"astro": "^6.1.5",
+		"tailwindcss": "^3.4.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.11",
+		"@playwright/test": "^1.59.1"
+	}
+}

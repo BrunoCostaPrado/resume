@@ -1,0 +1,51 @@
+---
+interface Props {
+  basics: {
+    email: string
+    phone: string
+    url: string
+    profiles: {
+      network: string
+      url: string
+      username: string
+    }[]
+  }
+}
+
+const { basics } = Astro.props
+---
+
+<div class="flex flex-wrap gap-4 text-sm sm:text-base">
+  <a 
+    href={`mailto:${basics.email}`}
+    class="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors"
+  >
+    Email
+  </a>
+  <a 
+    href={`tel:${basics.phone.replace(/\D/g, '')}`}
+    class="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors"
+  >
+    Phone
+  </a>
+  {basics.url && (
+    <a 
+      href={basics.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors"
+    >
+      Website
+    </a>
+  )}
+  {basics.profiles.map((profile) => (
+    <a 
+      href={profile.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors"
+    >
+      {profile.network}
+    </a>
+  ))}
+</div>

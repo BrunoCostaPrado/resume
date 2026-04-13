@@ -1,0 +1,90 @@
+{
+  "basics": {
+    "name": "Bruno C Prado",
+    "label": "Desenvolvedor Full Stack Júnior",
+    "email": "brunocostaprado@gmail.com",
+    "phone": "+55 (11) 3459-8807",
+    "phoneMobile": "+55 (11) 9769-10838",
+    "url": "https://brunocostaprado.com",
+    "summary": "Desenvolvedor Full Stack Júnior com experiência em desenvolvimento web. Apaixonado por criar aplicações acessíveis e amigáveis.",
+    "location": {
+      "city": "São Paulo",
+      "region": "São Paulo",
+      "countryCode": "BR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://linkedin.com/in/brunocostaprado",
+        "username": "brunocostaprado"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/BrunoCostaPrado",
+        "username": "BrunoCostaPrado"
+      }
+    ]
+  },
+  "work": [],
+  "skills": [
+    {
+      "name": "Front-End",
+      "keywords": ["HTML5", "CSS", "TypeScript", "SvelteKit", "React"]
+    },
+    {
+      "name": "Back-End",
+      "keywords": ["JavaScript", "TypeScript", "PostgreSQL", "Docker"]
+    },
+    {
+      "name": "Sistemas Operacionais",
+      "keywords": ["Linux (Debian-based)"]
+    },
+    {
+      "name": "Idiomas",
+      "keywords": ["Inglês (Intermediário)", "Espanhol (Básico)"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Instituto PROA",
+      "area": "Curso PROPROFISSÃO 4.0 em Tecnologia",
+      "studyType": "Certificação Profissional",
+      "startDate": "2021-08",
+      "endDate": "2021-12"
+    },
+    {
+      "institution": "Estácio",
+      "area": "Engenharia de Software",
+      "studyType": "Bacharel",
+      "startDate": "2022-03",
+      "endDate": "2026-05"
+    },
+    {
+      "institution": "ETEC Albert Einstein",
+      "area": "Técnico em Eletrônica",
+      "studyType": "Certificação Técnica",
+      "startDate": "2018-02",
+      "endDate": "2020-12"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Introdução a Indústria 4.0 e Fusion 360",
+      "description": "Introdução à indústria 4.0 e ao uso do Fusion 360. Escola Saga.",
+      "keywords": ["Modelagem 3D", "Fusion 360"],
+      "url": ""
+    },
+    {
+      "name": "CURSO Start",
+      "description": "Modelagem 3D, edição de vídeos, manipulação de imagens e criação de cenários 3D. Escola Saga.",
+      "keywords": ["Modelagem 3D", "Edição de Vídeos"],
+      "url": ""
+    },
+    {
+      "name": "CCNA 200-301",
+      "description": "Introdução a sistemas Cisco para certificação CCNA. Udemy.",
+      "keywords": ["Redes", "Cisco"],
+      "url": ""
+    }
+  ]
+}

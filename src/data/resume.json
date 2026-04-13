@@ -1,0 +1,90 @@
+{
+  "basics": {
+    "name": "Bruno C Prado",
+    "label": "Full Stack Junior Developer",
+    "email": "brunocostaprado@gmail.com",
+    "phone": "+55 (11) 3459-8807",
+    "phoneMobile": "+55 (11) 9769-10838",
+    "url": "https://brunocostaprado.com",
+    "summary": "Full Stack Junior Developer with experience in web development. Passionate about building accessible and user-friendly applications.",
+    "location": {
+      "city": "São Paulo",
+      "region": "São Paulo",
+      "countryCode": "BR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://linkedin.com/in/brunocostaprado",
+        "username": "brunocostaprado"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/BrunoCostaPrado",
+        "username": "BrunoCostaPrado"
+      }
+    ]
+  },
+  "work": [],
+  "skills": [
+    {
+      "name": "Front-End",
+      "keywords": ["HTML5", "CSS", "TypeScript", "SvelteKit", "React"]
+    },
+    {
+      "name": "Back-End",
+      "keywords": ["JavaScript", "TypeScript", "PostgreSQL", "Docker"]
+    },
+    {
+      "name": "Operating Systems",
+      "keywords": ["Linux (Debian-based)"]
+    },
+    {
+      "name": "Languages",
+      "keywords": ["English (Intermediary)", "Spanish (Basic)"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Instituto PROA",
+      "area": "Curso PROPROFISSÃO 4.0 em Tecnologia",
+      "studyType": "Professional Certification",
+      "startDate": "2021-08",
+      "endDate": "2021-12"
+    },
+    {
+      "institution": "Estacio College",
+      "area": "Software Engineering",
+      "studyType": "Bachelor",
+      "startDate": "2022-03",
+      "endDate": "2026-05"
+    },
+    {
+      "institution": "ETEC Albert Einstein",
+      "area": "Técnico em Eletrônica",
+      "studyType": "Technical Certification",
+      "startDate": "2018-02",
+      "endDate": "2020-12"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Introdução a Indústria 4.0 e Fusion 360",
+      "description": "Introduction to Industry 4.0 and Fusion 360. Escola Saga.",
+      "keywords": ["3D Modeling", "Fusion 360"],
+      "url": ""
+    },
+    {
+      "name": "CURSO Start",
+      "description": "3D modeling, video editing, image manipulation, and 3D scene creation. Escola Saga.",
+      "keywords": ["3D Modeling", "Video Editing"],
+      "url": ""
+    },
+    {
+      "name": "CCNA 200-301",
+      "description": "Introduction to Cisco systems for CCNA certification. Udemy.",
+      "keywords": ["Networking", "Cisco"],
+      "url": ""
+    }
+  ]
+}

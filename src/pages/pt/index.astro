@@ -1,0 +1,43 @@
+---
+import Contact from "@/components/Contact.astro"
+import Education from "@/components/Education.astro"
+import Experience from "@/components/Experience.astro"
+import Header from "@/components/Header.astro"
+import Projects from "@/components/Projects.astro"
+import Section from "@/components/Section.astro"
+import Skills from "@/components/Skills.astro"
+import resume from "@/data/resume-pt.json"
+import Layout from "@/layouts/Layout.astro"
+
+const { basics, work, skills, education, projects } = resume
+---
+
+<Layout title={`${basics.name} - ${basics.label}`} description={basics.summary} lang="pt">
+  <Header basics={basics} currentUrl="/pt" otherLang="/" langLabel="EN" />
+
+  <Section title="About">
+    <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+      {basics.summary}
+    </p>
+  </Section>
+
+  <Section title="Experience">
+    <Experience work={work} />
+  </Section>
+
+  <Section title="Skills">
+    <Skills skills={skills} />
+  </Section>
+
+  <Section title="Education">
+    <Education education={education} />
+  </Section>
+
+  <Section title="Projects">
+    <Projects projects={projects} />
+  </Section>
+
+  <Section title="Contact">
+    <Contact basics={basics} />
+  </Section>
+</Layout>
